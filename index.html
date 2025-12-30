@@ -41,22 +41,19 @@
             bottom: 0;
             background: #fffa;
             z-index: 99;
-        font-family: 'MiFuente', sans-serif;
+               font-family: 'MiFuente', sans-serif;
         }
         
         .button-style {
-    background-color: #ffffff; /* Fondo blanco */
-    color: #5b2bb4; /* Color del texto */
-    border: 1px solid #ff21ae; /* Borde dorado */
-    border-radius: 10px 40px 10px 40px; /* Alternar esquinas redondeadas */
-    padding: 10px 20px; /* Espaciado interno */
-    font-size: 16px; /* Tamaño de la fuente */
-    font-weight: bold; /* Negrita */
-    cursor: pointer; /* Cambiar cursor al pasar */
-    transition: background-color 0.3s, color 0.3s; /* Transición suave */
-    font-family: 'MiFuente', sans-serif;
-    margin-top: 23vh;
-}
+            background-color: #524935; /* Fondo blanco */
+            color: #ffffff; /* Color del texto en negro */
+            padding: 10px 20px; /* Espaciado interno */
+            font-size: 16px; /* Tamaño de la fuente */
+            cursor: pointer; /* Cambiar cursor al pasar */
+            transition: background-color 0.3s, color 0.3s; /* Transición suave */
+               font-family: 'MiFuente', sans-serif;
+                margin-top: 18vh;
+        }
 
         .button-style:hover {
             background-color: #f0f0f0; /* Cambia el fondo al pasar el cursor */
@@ -65,7 +62,7 @@
         
         /* Cambia el fondo de la pestaña de selección de cámara */
         #startARDiv {
-            background-image: url('TemplateData/Portada.png'); /* Establece la imagen como fondo */
+            background-image: url('TemplateData/Bg.jpg'); /* Establece la imagen como fondo */
             background-size: cover; /* Asegura que la imagen cubra toda el área */
             background-position: center center; /* Centra la imagen */
             background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -77,9 +74,9 @@
 <body>
     <video id="webcam-video" muted autoplay playsinline style="width:1px;position:absolute"></video>
     <canvas id="video-canvas" style="width:100%; height:100%; object-fit:cover; position:absolute"></canvas>
-    <div id="startARDiv" class="ctaDiv" >
-    <select id="chooseCamSel" class="button-style" style="visibility: hidden; width: 0; height: 0;"></select>
-<div style="position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); width: 80vw; color: #5b2bb4; text-align: center; border: 2px solid #ff21ae; border-radius: 10px; padding: 10px; background-color: #ffffff;">
+   <div id="startARDiv" class="ctaDiv">
+        <select id="chooseCamSel" style="display: none;" onchange="SelectCam()"></select>
+       <div style="position: fixed; bottom: 70px; left: 50%; transform: translateX(-50%); width: 80vw; color: white; text-align: center; border: 1px solid white; padding: 10px; background-color: rgba(82, 73, 53, 0.7);">
     <p>Esta experiencia de Realidad Aumentada requiere acceso a la cámara y los sensores de movimiento de tu dispositivo.</p>
 </div>
     <button id="startARButton" class="button-style" style="display:none" onclick="StartAR()">Permitir Acceso</button>
@@ -93,7 +90,7 @@
     <div id="errorDiv" class="ctaDiv" style="display: none; background:#aaa">
         <p id="errorText" style="text-align: center; width:60vw; color:white"></p>
     </div>
-    <div id="unity-container" class="unity-mobile">
+      <div id="unity-container" class="unity-mobile">
         <canvas id="unity-canvas" style="width: 100%; height: 100%; background: #0000; z-index: -99;"></canvas>
         <div id="unity-loading-bar">
                <div id="custom-image-overlay" style="position: absolute; top: 0; left: 0; width: 105%; height: 105%; background: rgba(0,0,0,0); display: flex; align-items: center; justify-content: center; z-index: 100;">
